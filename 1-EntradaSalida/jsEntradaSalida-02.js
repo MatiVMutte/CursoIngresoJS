@@ -1,5 +1,5 @@
 /*
-Reta Mutte Matias
+Reta Mutte Matias | DIV D
 E/S Ejercicio 2
 
 Al presionar el botón 'Mostrar'
