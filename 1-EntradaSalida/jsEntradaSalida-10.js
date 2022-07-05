@@ -13,7 +13,7 @@ function mostrarAumento()
 	let total;
 
 	importe = document.getElementById("txtIdImporte").value;
-	importe = parseInt(importe);
+	importe = parseFloat(importe);
 
 	descuento = (importe * 25) / 100;
 	total = importe - descuento;
