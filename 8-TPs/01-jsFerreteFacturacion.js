@@ -2,6 +2,8 @@
     Reta Mutte Matias | DIV D
     TP N°1 Ejer 1
 
+    https://onlinegdb.com/p2tGtNaRV
+
 1.	Para el departamento de facturación:
 A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
 B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
