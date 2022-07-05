@@ -1,8 +1,14 @@
+/*
+	Reta Mutte Matias | DIV D
+	IF Ejer 7
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	let edad;
+
+	edad = document.getElementById("txtIdEdad");
+	edad = parseInt(edad);
+
 	
-
-
-}//FIN DE LA FUNCIÓN
+}
