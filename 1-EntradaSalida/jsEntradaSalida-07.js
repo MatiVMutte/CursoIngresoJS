@@ -38,11 +38,17 @@ function multiplicar()
 
 function dividir()
 {
-	let num1 = parseInt(document.getElementById("txtIdNumeroUno").value);
-	let num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	let num1 = parseFloat(document.getElementById("txtIdNumeroUno").value);
+	let num2 = parseFloat(document.getElementById("txtIdNumeroDos").value);
 
-	let div = num1 / num2;
+	if(num2 != 0) {
+		let div = num1 / num2;
+
+		alert("La división da: " + div);
+	} else {
+		alert("No se puede dividir por cero.");
+	}
+
 	
-	alert("La división da: " + div);
 }
 
