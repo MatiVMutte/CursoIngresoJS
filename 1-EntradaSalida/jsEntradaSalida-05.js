@@ -13,6 +13,8 @@ function mostrar()
 	//alert("Usted se llama " + nombre + " y tiene " + edad + " años"); // Forma simple y comun | 1
 	//alert("Usted se llama ${nombre} y tiene ${edad} años"); // Otra forma de imprimir en JS | 2
 
+	//typeof --> Es para saber que tipo de dato es una variable.
+
 	let mensaje = "Usted se llama " + nombre + " y tiene " + edad + " años"; // Achicar el codigo | 3
 	alert(mensaje);
 }
