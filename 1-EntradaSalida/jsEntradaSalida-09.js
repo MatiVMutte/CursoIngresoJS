@@ -12,7 +12,8 @@ function mostrarAumento()
 	let aumento;
 	let total;
 
-	importe = parseInt(document.getElementById("txtIdSueldo").value);
+	importe = document.getElementById("txtIdSueldo").value;
+	importe = parseInt(importe);
 
 	aumento = (importe * 10) / 100 ;
 	total = importe + aumento;

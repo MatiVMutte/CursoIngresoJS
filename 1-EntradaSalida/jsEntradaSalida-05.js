@@ -2,6 +2,8 @@
 Reta Mutte Matias | DIV D
 E/S Ejer 5
 
+ENTREGADO
+
 Debemos lograr tomar nombre y edad por ID y mostrarlos concatenados 
 ej.: "Usted se llama José y tiene 66 años" 	*/
 function mostrar()

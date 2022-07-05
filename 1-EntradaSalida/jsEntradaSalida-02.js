@@ -2,6 +2,8 @@
 Reta Mutte Matias | DIV D
 E/S Eje 2
 
+ENTREGADO
+
 Al presionar el botón 'Mostrar'
 debemos lograr tomar un dato por '=prompt()'
 y luego mostrarlo por 'alert()'.
