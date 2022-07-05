@@ -8,10 +8,14 @@ mostrar el importe con un aumento del 10 %
 en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
-	let importe = parseInt(document.getElementById("txtIdSueldo").value);
+	let importe;
+	let aumento;
+	let total;
 
-	let aumento = (importe * 10) / 100 ;
-	let total = importe + aumento;
+	importe = parseInt(document.getElementById("txtIdSueldo").value);
+
+	aumento = (importe * 10) / 100 ;
+	total = importe + aumento;
 
 	txtIdResultado.value = total;
 }
