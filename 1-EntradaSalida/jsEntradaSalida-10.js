@@ -11,6 +11,7 @@ function mostrarAumento()
 	let importe
 	let descuento;
 	let total;
+	let mensaje;
 
 	importe = document.getElementById("txtIdImporte").value;
 	importe = parseFloat(importe);
@@ -18,5 +19,28 @@ function mostrarAumento()
 	descuento = (importe * 25) / 100;
 	total = importe - descuento;
 
-	document.getElementById("txtIdResultado").value = total;
+	mensaje = "El importe es: " + total;
+	document.getElementById("txtIdResultado").value = mensaje;
+
+	/*
+	let importe
+	let descuento;
+	let total;
+	let porcentaje;
+	let mensaje;
+
+	importe = document.getElementById("txtIdImporte").value;
+	porcentaje = prompt("Ingrese el porcentaje de aumento");
+
+	importe = parseFloat(importe);
+	porcentaje = parseInt(porcentaje);
+
+	descuento = (importe * porcentaje) / 100;
+	total = importe - descuento;
+
+	mensaje = "El importe con descuento es: $" + total;
+	document.getElementById("txtIdResultado").value = mensaje;
+
+	alert("Usted obtuvo un descuento de $" + descuento);
+	*/
 }
