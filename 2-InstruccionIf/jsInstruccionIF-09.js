@@ -1,6 +1,17 @@
+/*
+	Reta Mutte Matias | DIV D
+	IF Ejer 9
+
+
+
+	Genero el número RANDOM entre 1 y 10 
+*/
+
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");	
+	let numeroRand;
 
-}//FIN DE LA FUNCIÓN
+	numeroRand = Math.floor(Math.random()*10+1);
+
+	alert("Numero Random: " + numeroRand);
+}
