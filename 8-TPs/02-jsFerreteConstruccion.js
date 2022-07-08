@@ -32,12 +32,12 @@ function Circulo ()
 {
     let radio;
     let cantidadAComprar;
-    const PI = 3.14;
+    const PI = Math.PI;
 
     radio = document.getElementById("txtIdRadio").value;
     radio = parseFloat(radio);
 
-    cantidadAComprar = 2*PI*radio;
+    cantidadAComprar = (2*PI*radio) * 3;
 
 	alert("Cantidad de alambre a comprar: " + cantidadAComprar);
 }
