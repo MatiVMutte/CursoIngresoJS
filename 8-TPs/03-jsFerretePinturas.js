@@ -2,7 +2,7 @@
     Reta Mutte Matias | DIV D
     TP N°1 Ejer 3
 
-    https://onlinegdb.com/GaHA4_LCL
+    https://onlinegdb.com/25JQDwW_x
 
 3.	Para el departamento de Pinturas:
 A.	Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en Centígrados con un mensaje concatenado (ej.: " 32 Fahrenheit son 0 centígrados").
