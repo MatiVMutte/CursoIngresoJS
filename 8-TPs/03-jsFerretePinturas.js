@@ -19,7 +19,7 @@ function FahrenheitCentigrados ()
 
     celsius = (fahrenheit - 32) * (5/9);
 
-    alert(fahrenheit + " fahrenheit son " + celsius.toFixed(2) + " celsius.");
+    alert(fahrenheit + " fahrenheit son " + celsius.toFixed(1) + " celsius.");
 }
 
 function CentigradosFahrenheit () 
@@ -33,5 +33,5 @@ function CentigradosFahrenheit ()
 
     fahrenheit = (celsius * (9/5)) + 32;
 
-    alert(celsius + " celsius son " + fahrenheit.toFixed(2) + " fahrenheit.");
+    alert(celsius + " celsius son " + fahrenheit.toFixed(1) + " fahrenheit.");
 }
