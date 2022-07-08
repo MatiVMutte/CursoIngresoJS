@@ -23,10 +23,13 @@ function Rectangulo ()
     largo = document.getElementById("txtIdLargo").value;
     ancho = document.getElementById("txtIdAncho").value;
 
+    largo = parseFloat(largo);
+    ancho = parseFloat(ancho);
+
     perimetro = ((largo*2) + (ancho*2));
     cantidadAComprar = perimetro * 3;
 
-    alert("Cantidad de alambre a comprar: " + cantidadAComprar);
+    alert("Cantidad de alambre a comprar: " + cantidadAComprar.toFixed(2));
 }
 
 // B.	mostrar la cantidad de alambre a comprar  si se ingresara el radio  de un terreno circular y se debe alambra con tres hilos de alambre.
@@ -41,7 +44,7 @@ function Circulo ()
 
     cantidadAComprar = (2*PI*radio) * 3;
 
-	alert("Cantidad de alambre a comprar: " + cantidadAComprar.toFixed());
+	alert("Cantidad de alambre a comprar: " + cantidadAComprar.toFixed(2));
 }
 
 // C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de cal, debemos mostrar cuantas bolsas se necesitan de cada uno para las medidas que nos ingresen.
@@ -52,6 +55,7 @@ function Materiales ()
     let ancho; // = 1 |
     let cemento = 2;
     let cal = 3;
+    let area;
 
     largo = document.getElementById("txtIdLargo").value;
     ancho = document.getElementById("txtIdAncho").value;
@@ -61,10 +65,12 @@ function Materiales ()
 
     area = largo * ancho;
 
-    cemento *= area;
-    cal *= area;
+    cemento *= area; // Es lo mismo que decir --> cemento = cemento * area;
+    cal *= area; // Es lo mismo que decir --> cal = cal * area;
 
-    alert("Para cubrir " + area + "M de piso. Se necesita:\n\t"
+    /*alert("Para cubrir " + area + "M de piso. Se necesita:\n\t"
                                                 + cemento + " bolsas de cemento.\n\t"
-                                                + cal + " bolsas de cal.");
+                                                + cal + " bolsas de cal.");*/
+
+    alert("Para cubrir " + area + "M de piso. Se necesita: "+ cemento + " bolsas de cemento. Y " + cal + " bolsas de cal.");
 }
