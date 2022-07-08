@@ -67,5 +67,5 @@ function PrecioFinal ()
     IVA = (precioTotalIVA * 21) / 100;
     precioTotalIVA += IVA;
 
-    alert("El total de todos los productos mas el IVA es: " + precioTotalIVA);
+    alert("El total de todos los productos mas el IVA es: " + precioTotalIVA.toFixed(2));
 }
