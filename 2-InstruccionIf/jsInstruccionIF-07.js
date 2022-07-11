@@ -6,6 +6,10 @@
 	mostrar el siguiente mensaje: 'Es muy pequeño para NO ser soltero.'
 */
 
+function estaVacio(campo) {
+	return campo == "";
+}
+
 function mostrar()
 {
 	let edad;
@@ -15,7 +19,7 @@ function mostrar()
 	edad = document.getElementById("txtIdEdad").value; // Obtengo la edad del campo INPUT tipo Texto
 	select = document.getElementById("estadoCivil"); // Obtengo el elemento del campo SELECT para posteriormente acceder a el elemento seleccionado
 
-	if(edad != ""){ // Verifico Si El Campo Esta Vacio
+	if(!estaVacio(edad)){ // Verifico Si El Campo Esta Vacio
 		if(!isNaN(edad)) { // Si el campo NO esta vacio. Verifico si (edad) sea un numero. 
 			edad = parseInt(edad); // Entonces convierto el "String" edad a un "Int"
 			estadoCivil = select.options[select.selectedIndex].text; // Obtengo en "String" el texto que esta en option seleccionado
@@ -23,9 +27,6 @@ function mostrar()
 
 			if(edad < 18 && estadoCivil != "soltero") { // Si la persona es menor de edad AND/Y su estado civil es distinto a "Soltero"...
 				alert("Es muy pequenio para NO ser soltero.");
-
-			} else { // Si no...
-				alert("Muy bien!!");
 
 			}
 
