@@ -10,7 +10,7 @@ function mostrar() {
 	edad = document.getElementById("txtIdEdad").value;
 	edad = parseInt(edad);
 
-	if(edad == 15){
+	if(edad == 15) {
 		alert("Niña Bonita");
 	} else {
 		alert("No es el numero 15");
