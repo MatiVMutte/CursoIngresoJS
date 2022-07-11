@@ -12,5 +12,7 @@ function mostrar() {
 
 	if(edad == 15){
 		alert("Niña Bonita");
+	} else {
+		alert("No es el numero 15");
 	}
 }
