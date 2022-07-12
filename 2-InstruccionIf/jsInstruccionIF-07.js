@@ -12,7 +12,7 @@
 */
 
 function estaVacio(campo) {
-	return campo == "";
+	return campo == ""; // Cuando enviaba el formulario con el campo vacio. Y verifique la variable, me di cuenta que traia un String vacio.
 }
 
 function mostrar()
@@ -24,7 +24,7 @@ function mostrar()
 	edad = document.getElementById("txtIdEdad").value; // Obtengo la edad del campo INPUT tipo Texto
 	select = document.getElementById("estadoCivil"); // Obtengo el elemento del campo SELECT para posteriormente acceder a el elemento seleccionado
 
-	if(!estaVacio(edad)){ // Verifico Si El Campo Esta Vacio
+	if(!estaVacio(edad)){ // Verifico Si El Campo !NO Esta Vacio
 		if(!isNaN(edad)) { // Si el campo NO esta vacio. Verifico si (edad) sea un numero. 
 			edad = parseInt(edad); // Entonces convierto el "String" edad a un "Int"
 			estadoCivil = select.options[select.selectedIndex].text; // Obtengo en "String" el texto que esta en option seleccionado [Dentro de los corchetes va la posicion]
