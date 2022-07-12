@@ -27,16 +27,13 @@ function mostrar()
 
 			if(edad < 18 && estadoCivil != "soltero") { // Si la persona es menor de edad AND/Y su estado civil es distinto a "Soltero"...
 				alert("Es muy pequenio para NO ser soltero.");
-
 			}
 
 		} else {
 			alert("Debe poner su edad.");
-
 		}
 	} else {
 		alert("Campo EDAD vacio");
-
 	}
 	
 
