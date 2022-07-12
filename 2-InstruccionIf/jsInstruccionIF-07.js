@@ -2,6 +2,11 @@
 	Reta Mutte Matias | DIV D
 	IF Ejer 7
 
+	ENTREGADO --> Yo accedi al select de una forma distinta, por que pense que iba a ser distonta la forma. Asi que investigue esta.
+		|---> Ademas añadi validaciones para dos casos: 
+											|---> Evitar que se envien campos vacios.
+											|---> Evitar que se envien campos con otro tipo de dato que no sea el pedido.
+
 	Al ingresar una edad menor a 18 años y un estado civil distinto a "Soltero", 
 	mostrar el siguiente mensaje: 'Es muy pequeño para NO ser soltero.'
 */
@@ -22,7 +27,7 @@ function mostrar()
 	if(!estaVacio(edad)){ // Verifico Si El Campo Esta Vacio
 		if(!isNaN(edad)) { // Si el campo NO esta vacio. Verifico si (edad) sea un numero. 
 			edad = parseInt(edad); // Entonces convierto el "String" edad a un "Int"
-			estadoCivil = select.options[select.selectedIndex].text; // Obtengo en "String" el texto que esta en option seleccionado
+			estadoCivil = select.options[select.selectedIndex].text; // Obtengo en "String" el texto que esta en option seleccionado [Dentro de los corchetes va la posicion]
 			estadoCivil = estadoCivil.toLowerCase(); // Convierto todo ese texto obtenido en MINUSCULAS(lowerCase) para evitar problemas en el IF
 
 			if(edad < 18 && estadoCivil != "soltero") { // Si la persona es menor de edad AND/Y su estado civil es distinto a "Soltero"...
