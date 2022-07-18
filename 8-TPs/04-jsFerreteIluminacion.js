@@ -61,7 +61,8 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
     }
 
     if(precioLampara > 120) { // !E
-        let aumento = (precioLampara * 10) / 100;
+        let aumento;
+        aumento = (precioLampara * 10) / 100;
         precioLampara = precioLampara + aumento;
         alert("IIBB Usted pago $" + aumento);
     }
