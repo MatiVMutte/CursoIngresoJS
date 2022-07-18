@@ -15,6 +15,61 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 
+    /*
+    let select;
+    let marcaLamparita;
+    let cantidadLamparita;
+    let descuento;
+    let mensaje;
+ 	let precioLampara = 35.00;
+
+    cantidadLamparita = document.getElementById("txtIdCantidad").value;
+    select = document.getElementById("Marca");
+
+    cantidadLamparita = parseInt(cantidadLamparita);
+    marcaLamparita = select.options[select.selectedIndex].text;
+
+    precioLampara = precioLampara * cantidadLamparita;
+
+    if(cantidadLamparita > 5) { // !A
+        descuento = (precioLampara * 50) / 100;
+        precioLampara = precioLampara - descuento;
+    } else if(cantidadLamparita == 5) { //!B
+        if(marcaLamparita == "ArgentinaLuz") {
+            descuento = (precioLampara * 40) / 100;
+        }else {
+            descuento = (precioLampara * 30) / 100;
+        }
+        precioLampara = precioLampara - descuento;
+    } else if(cantidadLamparita == 4) { //!C
+        if(marcaLamparita == "ArgentinaLuz" || marcaLamparita == "FelipeLamparas") {
+            descuento = (precioLampara * 25) / 100;
+        }else {
+            descuento = (precioLampara * 20) / 100;
+        }
+        precioLampara = precioLampara - descuento;
+    } else if(cantidadLamparita == 3){ // !D
+        if(marcaLamparita == "ArgentinaLuz") {
+            descuento = (precioLampara * 15) / 100;
+        } else if(marcaLamparita == "FelipeLamparas") {
+            descuento = (precioLampara * 10) / 100;
+        } else {
+            descuento = (precioLampara * 5) / 100;
+        }
+        precioLampara = precioLampara - descuento;
+    }
+
+    if(precioLampara > 120) { // !E
+        let aumento;
+        aumento = (precioLampara * 10) / 100;
+        precioLampara = precioLampara + aumento;
+        alert("IIBB Usted pago $" + aumento);
+    }
+
+    mensaje = "Compraste " + cantidadLamparita + " lamparas. Precio Final: $" + precioLampara;
+    document.getElementById("txtIdprecioDescuento").value = mensaje;
+    */
+
  function CalcularPrecio () 
 {
     let select;
