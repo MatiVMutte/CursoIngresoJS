@@ -33,21 +33,27 @@ function verificar()
   if(comenzo) {
     numeroIngresado = document.getElementById("txtIdNumero").value;
 
-    if(numeroIngresado != "" && !isNaN(numeroIngresado) && (numeroIngresado > 0 && numeroIngresado < 101)) {
+    if(numeroIngresado != "" && !isNaN(numeroIngresado)) {
       numeroIngresado = parseInt(numeroIngresado);
+      if(numeroIngresado > 0 && numeroIngresado < 101) {
 
-      if(numeroIngresado == numeroSecreto) {
-        alert("Usted es un ganador!!!\nY en solo " + contadorIntentos + " intentos.");
-        comenzo = false;
-      } else {
-        contadorIntentos++;
-        document.getElementById("txtIdIntentos").value = "Intentos: " + contadorIntentos;
-        if(numeroIngresado > numeroSecreto) {
-          alert("Te pasaste!!");
+        if(numeroIngresado == numeroSecreto) {
+          alert("Usted es un ganador!!!\nY en solo " + contadorIntentos + " intentos.");
+          comenzo = false;
         } else {
-          alert("Falta para llegarrr!!");
+          contadorIntentos++;
+          document.getElementById("txtIdIntentos").value = "Intentos: " + contadorIntentos;
+          if(numeroIngresado > numeroSecreto) {
+            alert("Te pasaste!!");
+          } else {
+            alert("Falta para llegarrr!!");
+          }
         }
+
+      }else {
+        alert("Debe ingresar un numero entre ( 1 - 100).");
       }
+
     } else {
         alert("Debe ingresar un numero entre ( 1 - 100).");
     }
