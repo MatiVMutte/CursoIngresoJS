@@ -1,106 +1,96 @@
 /*
-	Ramirez Mariano- Div D
-	Switch - Ejercicio 9
+OTRA FORMA DE RESOLVERLO --> https://www.onlinegdb.com/xPprr2dwbD
 
-Enunciado:
-una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
+una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, 
+se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
 
-en Invierno: bariloche tiene un aumento del 20% cataratas y Cordoba tiene un descuento del 10% Mar del plata tiene un descuento del 20%
+en Invierno: bariloche tiene un aumento del 20% cataratas y Cordoba tiene un descuento del 10% Mar del plata 
+tiene un descuento del 20%
 
-en Verano: bariloche tiene un descuento del 20% cataratas y Cordoba tiene un aumento del 10% Mar del plata tiene un aumento del 20%
+en Verano: bariloche tiene un descuento del 20% cataratas y Cordoba tiene un aumento del 10% Mar del plata
+tiene un aumento del 20%
 
-en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aumento del 10% Mar del plata tiene un aumento del 10% y Cordoba tiene el precio sin descuento
+en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aumento del 10% Mar del 
+plata tiene un aumento del 10% y Cordoba tiene el precio sin descuento
+
+
+Entradas: estacion, destino
+Proceso: Calcular descuento/aumento segun la estacion y el destino
+Salida: Mostrar el precio del pasaje segun descuento/aumento 
 */
 
-function mostrar() {
+
+function mostrar()
+{
 	var estacionIngresada;
-	var lugarDestino;
-	var valorEstadia;
-	var valorAumento;
-	var valorDescuento;
-	var valorPorcentaje;
+	var destino;
+	var porcentaje;//+ o -
 	var precioFinal;
-  
-	valorEstadia = 15000;
-  
+	const PRECIO_ESTADIA = 15000;
+
+
 	estacionIngresada = txtIdEstacion.value;
-	lugarDestino = txtIdDestino.value;
-  
-	switch (estacionIngresada) 
+	destino = txtIdDestino.value;
+
+	switch(estacionIngresada)
 	{
-	  case "Invierno":
-		/*
-		Bariloche: 20% de aumento
-		mar del plata: 20% de descuento
-		cataratas y córdoba: 10% de descuento
-	  */
-		switch (lugarDestino) {
-		  case "Bariloche":
-			valorPorcentaje = 0.2;
-			valorAumento = valorEstadia * valorPorcentaje; // ? = 15000 * 0.20
-			precioFinal = valorEstadia + valorAumento; // ? = 15000 + aumento
-			break;
-		  case "Mar del plata":
-			valorPorcentaje = 0.2;
-			valorDescuento = valorEstadia * valorPorcentaje;
-			precioFinal = valorEstadia - valorDescuento;
-			break;
-  
-		  default: // cataratas y córdoba
-			valorPorcentaje = 0.1;
-			valorAumento = valorEstadia * valorPorcentaje;
-			precioFinal = valorEstadia + valorAumento;
-			break;
-		}
+		case "Invierno":
+			switch(destino)
+			{
+				case "Bariloche":
+					porcentaje = 20;
+				break;
+				case "Mar del plata":
+					porcentaje = -20;
+				break;
+				default://cataratas y cordoba
+					porcentaje = -10;
+				break;
+			}
 		break;
-	  case "Verano":
-	  /*
-	  Bariloche: 20% de Descuento
-	  mar del plata: 20% de aumento
-	  cataratas y córdoba: 10% de aumento
-	  */
-	  switch(lugarDestino)
-	  {
-		case "Bariloche":
-		  valorPorcentaje = 0.2;
-		  valorDescuento = valorEstadia * valorPorcentaje;
-		  precioFinal = valorEstadia - valorDescuento;
+		case "Verano":
+			switch(destino)
+			{
+				case "Bariloche":
+					porcentaje = -20;
+				break;
+				case "Mar del plata":
+					porcentaje = 20;
+				break;
+				default://cataratas y cordoba
+					porcentaje = 10;
+				break;
+			}
 		break;
-  
-		case "Mar del plata":
-		  valorPorcentaje = 0.2;
-		  valorAumento = valorEstadia * valorPorcentaje;
-		  precioFinal = valorEstadia + valorAumento;
-		break
-  
-		default:
-		  valorPorcentaje = 0.1;
-		  valorAumento = valorEstadia * valorPorcentaje;
-		  precioFinal = valorEstadia + valorAumento;
-		break;
-	  }  
-  
-	  default:
-	  /*
-		Bariloche/cataratas/mar del plata: 10% de aumento
-		cordoba: 0
-	  */
-		switch(lugarDestino)
-		{
-		  case "Cordoba":
-			precioFinal = valorEstadia;
-		  break;
-  
-		  default:
-			valorPorcentaje= 0.1;
-			valorAumento= valorEstadia * valorPorcentaje;
-			precioFinal= valorEstadia + valorAumento;
-		  break;
-		}
+		default://Otoño o Primavera
+			switch(destino)
+			{
+				case "Cordoba":
+					porcentaje = 0;
+				break;
+				default:
+					porcentaje = 10;
+				break;
+			}
 		break;
 	}
-	alert("Su localidad para vacacionar segun la estacion ingresada costara "+precioFinal+" pesos");
-  } //FIN DE LA FUNCIÓN
-  
-  
-  
+
+	precioFinal = PRECIO_ESTADIA + (PRECIO_ESTADIA*porcentaje)/100;
+
+	alert("El precio final de la estadia es: " + precioFinal)
+
+
+	/*
+	casos de prueba: 
+	1) Invierno y Bariloche : 18000 ok
+	2) Verano y Cordoba: 16500 ok
+	3) Otoño y Mar del plata: 16500 ok
+	4) Primavera y cordoba: 15000 ok
+	5) Verano y Bariloche: 12000 ok
+
+
+	*/
+
+
+
+}//FIN DE LA FUNCIÓN
