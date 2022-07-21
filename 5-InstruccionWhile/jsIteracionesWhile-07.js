@@ -7,6 +7,7 @@ function mostrar()
 	var contador;
 	var numeroIngresado;
 	var respuesta;
+	contador = 0;
 	acumulador=0;
 	respuesta="si";
 
@@ -15,6 +16,7 @@ function mostrar()
 		numeroIngresado = parseInt(numeroIngresado);
 
 		acumulador = acumulador + numeroIngresado;
+		contador++;
 		respuesta = prompt("¿Desea seguir? si/no");
 	}
 
