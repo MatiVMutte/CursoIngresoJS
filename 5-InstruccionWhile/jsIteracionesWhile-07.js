@@ -5,12 +5,18 @@ e informar la suma acumulada y el promedio.
 function mostrar()
 {
 	var contador;
-	var acumulador;
+	var numeroIngresado;
 	var respuesta;
-	contador=0;
 	acumulador=0;
-	respuesta='si';
+	respuesta="si";
 
+	while(respuesta == "si") {
+		numeroIngresado = prompt("Ingrese un numero");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		acumulador = acumulador + numeroIngresado;
+		respuesta = prompt("¿Desea seguir? si/no");
+	}
 
 	txtIdSuma.value=acumulador;
 	txtIdPromedio.value=acumulador/contador;
