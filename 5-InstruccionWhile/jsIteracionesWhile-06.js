@@ -1,3 +1,9 @@
+/*
+Reta Mutte Matias
+	DIV D
+
+	ENTREGADO
+*/
 function mostrar()
 {
 	var contador;

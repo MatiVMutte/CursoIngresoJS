@@ -1,4 +1,9 @@
 /*
+Reta Mutte Matias
+	DIV D
+
+	ENTREGADO
+
 Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
 e informar la suma acumulada y el promedio.
 */

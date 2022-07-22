@@ -1,12 +1,17 @@
 /*
+	Reta Mutte Matias | DIV D
+	WHILE Ejer 08
+
+	ENTREGADO
+
 Al presionar el botón pedir  números  hasta que el usuario quiera,
-sumar los que son positivos y multiplicar los negativos.*/
+sumar los que son positivos y multiplicar los negativos.
+*/
 function mostrar()
 {
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
-	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
