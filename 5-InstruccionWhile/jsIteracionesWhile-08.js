@@ -26,7 +26,7 @@ function mostrar()
 			multiplicacionNegativos = multiplicacionNegativos * numeroIngresado;
 		}
 		
-		respuesta = prompt("¿Desea seguir? si/no");
+		respuesta = prompt("¿Desea seguir? si/no"); //confirm --> Aceptar o Cancelar
 	}
 
 	txtIdSuma.value=sumaPositivos;
