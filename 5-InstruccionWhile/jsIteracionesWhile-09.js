@@ -25,7 +25,10 @@ function mostrar()
 			if(numeroIngresado > numeroMaximo) {
 				numeroMaximo = numeroIngresado;
 			} else {
-				numeroMinimo = numeroIngresado;
+				if(numeroIngresado < numeroMinimo) {
+					numeroMinimo = numeroIngresado;
+				}
+				
 			}
 		} else {
 			numeroMaximo = numeroIngresado;
