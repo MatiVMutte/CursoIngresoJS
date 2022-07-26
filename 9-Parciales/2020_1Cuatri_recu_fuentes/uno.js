@@ -27,16 +27,103 @@
 function mostrar()
 {
 	let precioUnitario;
-	let producto;
-	let unidades;
+	let tipoProducto;
+	let cantUnidades;
 	let marca;
 	let fabricante;
 
-	/*let barbijo;
-	let alcohol;
-	let jabon;*/
+	let masCaroJabon;
+	let cantUnidadesJabonCaro;
+	let fabricanteJabon;
+	cantUnidadesJabonTotal = 0;
+	cantUnidadesBarbijoTotal = 0;
+	cantUnidadesAlcoholTotal = 0;
 
+	let cantUnidadesJabonTotal;
+	let cantUnidadesBarbijoTotal;
+	let cantUnidadesAlcoholTotal;
+	let productoMasUnidades;
+	let precioTotalJabon;
+	let precioTotalBarbijo;
+	let precioTotalAlcohol;
+	let promedioMasUnidades;
+	let nombreProductoMasUnidades;
+	let precioTotalMasUnidades;
+	let esLaPrimeraJabon = true;
+	precioTotalJabon = 0;
+	precioTotalBarbijo = 0;
+	precioTotalAlcohol = 0;
 	
+	for(let i = 0; i < 5; i++) {
+		tipoProducto = prompt("Ingrese el producto: \nBarbijo\nJabon\nAlcohol");
+		tipoProducto = tipoProducto.toLowerCase();
+		while(tipoProducto != "barbijo" && tipoProducto != "jabon" && tipoProducto != "alcohol") {
+			tipoProducto = prompt("Reingrese el producto: \nBarbijo\nJabon\nAlcohol");
+			tipoProducto = tipoProducto.toLowerCase();
+		}
 
-	
+		precioUnitario = prompt("Ingrese el precio unitario del " + tipoProducto + ":");
+		precioUnitario = parseFloat(precioUnitario);
+		while((precioUnitario < 100 || precioUnitario > 300) || isNaN(precioUnitario)) {
+			precioUnitario = prompt("Reingrese el precio unitario del " + tipoProducto + ":");
+			precioUnitario = parseFloat(precioUnitario);
+		}
+
+		cantUnidades = prompt("Ingrese cuantos " + tipoProducto + " va a comprar: (No puede ser 0 ni superar los 1000)");
+		cantUnidades = parseInt(cantUnidades);
+		while(cantUnidades == 0 || cantUnidades > 1000) {
+			cantUnidades = prompt("Reingrese cuantos " + tipoProducto + " va a comprar: (No puede ser 0 ni superar los 1000)");
+			cantUnidades = parseInt(cantUnidades);
+		}
+
+		marca = prompt("Ingrese la marca del producto:");
+
+		fabricante = prompt("Ingrese el fabricante:");
+
+		switch (tipoProducto) {
+			case "jabon":
+				if(precioUnitario > masCaroJabon || esLaPrimeraJabon) {
+					masCaroJabon = precioUnitario;
+					cantUnidadesJabonCaro = cantUnidades;
+					fabricanteJabon = fabricante;
+					esLaPrimeraJabon = false;
+				}
+				cantUnidadesJabonTotal = cantUnidadesJabonTotal + cantUnidades;
+				precioTotalJabon = precioTotalJabon + precioUnitario;
+				break;
+			case "barbijo":
+				cantUnidadesBarbijoTotal = cantUnidadesBarbijoTotal + cantUnidades;
+				precioTotalBarbijo = precioTotalBarbijo + precioUnitario;
+				break;
+			default:
+				cantUnidadesAlcoholTotal = cantUnidadesAlcoholTotal + cantUnidades;
+				precioTotalAlcohol = precioTotalAlcohol + precioUnitario;
+				break;
+		}
+	}
+
+	if(cantUnidadesBarbijoTotal > cantUnidadesJabonTotal && cantUnidadesBarbijoTotal > cantUnidadesAlcoholTotal) {
+		nombreProductoMasUnidades = "barbijo";
+		precioTotalMasUnidades = precioTotalBarbijo;
+		productoMasUnidades = cantUnidadesBarbijoTotal;
+	} else if(cantUnidadesJabonTotal > cantUnidadesBarbijoTotal && cantUnidadesJabonTotal > cantUnidadesAlcoholTotal) {
+		nombreProductoMasUnidades = "jabon";
+		precioTotalMasUnidades = precioTotalJabon;
+		productoMasUnidades = cantUnidadesJabonTotal;
+	} else {
+		nombreProductoMasUnidades = "alcohol";
+		precioTotalMasUnidades = precioTotalAlcohol;
+		productoMasUnidades = cantUnidadesAlcoholTotal;
+	}
+
+	promedioMasUnidades = ((precioTotalAlcohol * cantUnidadesAlcoholTotal) + (precioTotalBarbijo * cantUnidadesBarbijoTotal) + (precioTotalJabon * cantUnidadesJabonTotal)) / (productoMasUnidades * precioTotalMasUnidades);
+
+
+	document.write("El jabon mas caro es el del " + fabricanteJabon + " con precio $" + masCaroJabon + " cada uno." 
+					+ "<br>Compraras " + cantUnidadesJabonCaro + " Jabones." + "<br><br>"); // !A
+
+	document.write("El producto con mas unidades tiene: " + productoMasUnidades + "y es " + nombreProductoMasUnidades + "<br>");
+	document.write("El promedio de compra del producto con mas unidades: " + promedioMasUnidades);
+
+	document.write("Barbijos que se compraron en total son: " + cantUnidadesBarbijoTotal); // !C
 }
