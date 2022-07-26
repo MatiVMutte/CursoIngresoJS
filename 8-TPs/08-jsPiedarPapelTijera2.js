@@ -1,127 +1,73 @@
-var contadorDeEmpates=0;
-var contadorDeGanadas=0;
-var contadorDePerdidas=0;
+/*
+    3. Piedra, Papel o Tijera (v 1.0):
 
-/*Al comenzar el juego generaremos un número 
-RANDOM del 1 al 3 para la selección de la máquina, 
-siendo 1 para “piedra”, el 2 para “papel” y 3 para “tijera”.
-El jugador seleccionará una imagen correspondiente 
-a su opción  y le informaremos si ganó, empató o perdió.
+    Al comenzar el juego generaremos un número RANDOM del 1 al 3 para la selección de la máquina, 
+    siendo 1 para “piedra”, el 2 para “papel” y 3 para “tijera”.
+
+    El jugador seleccionará una imagen correspondiente a su opción y le informaremos si ganó, empató o perdió
+
+    3. Piedra, Papel o Tijera (v 2.0):
+    
+    Ahora debemos informar cuantas veces se ganó, perdió o empató desde la última recarga de página
 */
-var eleccionMaquina;
-var eleccionUsuarioMensaje;
-var eleccionMaquinaMensaje;
+var seleccionMaquina;
+var mensaje;
 
-function comenzar()
+function comenzar() 
 {
-	eleccionMaquina = Math.floor(Math.random() * 3 + 1);
-}//FIN DE LA FUNCIÓN
-function piedra()
+    seleccionMaquina = Math.floor(Math.random() * 3 + 1);
+}
+
+function piedra() 
 {
-    let mensaje;
-    comenzar();
-    eleccionUsuarioMensaje = "Piedra";
-    switch (eleccionMaquina) {
+    comenzar(); // Llamo a la funcion para que se pueda ejecutar
+    switch (seleccionMaquina) {
         case 1:
-            eleccionMaquinaMensaje = "Piedra";
+            mensaje = "Empato";
             break;
         case 2:
-            eleccionMaquinaMensaje = "Papel";
+            mensaje = "Perdiste...";
             break;
         default:
-            eleccionMaquinaMensaje = "Tijera";
+            mensaje = "Ganaste!!!";
             break;
-    }
-
-    mensaje = eleccionUsuarioMensaje + " VS " + eleccionMaquinaMensaje;
-
-    if(eleccionMaquina == 1) {
-        mensaje += " = Empate";
-		contadorDeEmpates++;
-    } else if(eleccionMaquina == 2) {
-        mensaje += " = Perdiste...";
-		contadorDePerdidas++;
-    }else {
-        mensaje += " = Ganaste!!!";
-		contadorDeGanadas++;
     }
 
     alert(mensaje);
+}
 
-	mostrarResultado();
-}//FIN DE LA FUNCIÓN
-function papel()
+function papel() 
 {
-    let mensaje;
-    comenzar();
-    eleccionUsuarioMensaje = "Papel";
-    switch (eleccionMaquina) {
+    comenzar(); // Llamo a la funcion para que se pueda ejecutar
+    switch (seleccionMaquina) {
         case 1:
-            eleccionMaquinaMensaje = "Piedra";
+            mensaje = "Ganaste!!";
             break;
         case 2:
-            eleccionMaquinaMensaje = "Papel";
+            mensaje = "Empate";
             break;
         default:
-            eleccionMaquinaMensaje = "Tijera";
+            mensaje = "Perdiste...";
             break;
-    }
-
-    mensaje = eleccionUsuarioMensaje + " VS " + eleccionMaquinaMensaje;
-
-    if(eleccionMaquina == 1) {
-        mensaje += " = Ganaste!!!";
-		contadorDeGanadas++;
-    } else if(eleccionMaquina == 2) {
-        mensaje += " = Empate";
-		contadorDeEmpates++;
-    }else {
-        mensaje += " = Perdiste...";
-		contadorDePerdidas++;
     }
 
     alert(mensaje);
+}
 
-	mostrarResultado();
-}//FIN DE LA FUNCIÓN
-function tijera()
-{  
-	let mensaje;
-    comenzar();
-    eleccionUsuarioMensaje = "Tijera";
-    switch (eleccionMaquina) {
+function tijera() 
+{
+    comenzar(); // Llamo a la funcion para que se pueda ejecutar
+    switch (seleccionMaquina) {
         case 1:
-            eleccionMaquinaMensaje = "Piedra";
+            mensaje = "Perdio";
             break;
         case 2:
-            eleccionMaquinaMensaje = "Papel";
+            mensaje = "Ganaste!!";
             break;
         default:
-            eleccionMaquinaMensaje = "Tijera";
+            mensaje = "Empate";
             break;
-    }
-
-    mensaje = eleccionUsuarioMensaje + " VS " + eleccionMaquinaMensaje;
-
-    if(eleccionMaquina == 1) {
-        mensaje += " = Perdiste...";
-		contadorDePerdidas++;
-    } else if(eleccionMaquina == 2) {
-        mensaje += " = Ganaste!!!";
-		contadorDeGanadas++;
-    }else {
-        mensaje += " = Empate";
-		contadorDeEmpates++;
     }
 
     alert(mensaje);
-
-	mostrarResultado();
-}//FIN DE LA FUNCIÓN
-
-function mostrarResultado()
-{
-	txtIdGanadas.value = "Ganadas: " + contadorDeGanadas;
-	txtIdPerdidas.value = "Perdidas: " + contadorDePerdidas;
-	txtIdEmpatadas.value = "Empatadas: " + contadorDeEmpates;
 }
